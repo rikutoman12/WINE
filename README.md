@@ -1,24 +1,24 @@
 # README
+# 自分に合ったワインを探す。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+　このサイトは、自分が飲んだワインをカテゴリーごとに評価、記入していくことで、自分に合ったワインを探し出すことが出来ます。
 
-Things you may want to cover:
+### サイトテーマ
+自分に合ったワインが見つかる
 
-* Ruby version
+### テーマを選んだ理由
+ワイン初心者の方は、どこの産地のワインが自分好みなのか、どの種類が好きなのかなど、わかっていない為、探し出すのが大変です。その探し出す楽しみを後押ししてくれるようなサイトを作りたかった為。
 
-* System dependencies
+### ターゲットユーザ
+ワイン初心者。
 
-* Configuration
+### 主な利用シーン
+ワインを飲んだ際。
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 開発環境
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- IDE：Cloud9
