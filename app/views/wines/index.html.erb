@@ -1,0 +1,10 @@
+<% @wines.each do |wine| %>
+  <%= attachment_image_tag wine, :image %>
+  <%= wine.colour %>
+  <%= wine.comment %>
+  <%= wine.age %>
+  <%= wine.origin %>
+  <%= wine.scent %>
+  <%= wine.taste %>
+  <%= wine.kinds %>
+<% end %>
