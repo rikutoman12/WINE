@@ -1,0 +1,9 @@
+<%= attachment_image_tag @wine, :image , class: 'indexImage'%>
+  <%= @wine.colour %>
+  <%= @wine.comment %>
+  <%= @wine.age %>
+  <%= @wine.origin %>
+  <%= @wine.scent %>
+  <%= @wine.taste %>
+  <%= @wine.kinds %>
+ <%= link_to 'edit',edit_wine_path(@wine) %>

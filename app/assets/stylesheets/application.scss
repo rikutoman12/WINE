@@ -13,3 +13,20 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap";
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
+
+@media screen and (min-width: 1200px) {
+ .indexImage {
+   width: 400px !important;
+   height: 500px !important;
+ }
+}
+
+@media screen and (min-width: 400px) {
+ .indexImage {
+   width: 400px !important;
+   height: 550px !important;
+ }
+}

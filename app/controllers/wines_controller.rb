@@ -1,5 +1,5 @@
 class WinesController < ApplicationController
-   def new
+  def new
     @wine = Wine.new
   end
 
@@ -14,6 +14,17 @@ class WinesController < ApplicationController
   end
 
   def show
+    @wine = Wine.find(params[:id])
+  end
+
+  def edit
+    @wine = Wine.find(params[:id])
+  end
+
+  def update
+    @wine = Wine.find(params[:id])
+    @wine.update(wine_params)
+    redirect_to wine_path(@wine)
   end
 
   def destroy

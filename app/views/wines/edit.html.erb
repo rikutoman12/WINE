@@ -1,0 +1,13 @@
+<h1>画像投稿フォーム</h1>
+<%= form_with model: @wine, local:true do |f| %>
+  <h4>画像</h4>
+  <%= f.attachment_field :image %>
+  <%= f.text_area :colour %>
+  <%= f.text_area :comment %>
+  <%= f.text_area :age %>
+  <%= f.text_area :origin %>
+  <%= f.text_area :scent %>
+  <%= f.text_area :taste %>
+  <%= f.text_area :kinds %>
+  <%= f.submit '投稿' %>
+<% end %>

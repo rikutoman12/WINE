@@ -1,5 +1,5 @@
 <% @wines.each do |wine| %>
-  <%= attachment_image_tag wine, :image %>
+  <%= attachment_image_tag wine, :image , class: 'indexImage'%>
   <%= wine.colour %>
   <%= wine.comment %>
   <%= wine.age %>
@@ -7,4 +7,5 @@
   <%= wine.scent %>
   <%= wine.taste %>
   <%= wine.kinds %>
+  <%= link_to 'show',wine_path(wine) %>
 <% end %>
