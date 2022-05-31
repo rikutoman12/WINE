@@ -1,12 +1,26 @@
-<% @wines.each do |wine| %>
-  <%= attachment_image_tag wine, :image , class: 'indexImage'%>
-  <%= wine.colour %>
-  <%= wine.comment %>
-  <%= wine.age %>
-  <%= wine.origin %>
-  <%= wine.scent %>
-  <%= wine.taste %>
-  <%= wine.kinds %>
-  <%= link_to 'show',wine_path(wine) %>
- 
-<% end %>
+<div class=container>
+  <div class="row">
+    <% @wines.each do |wine| %>
+      <div class ='m-2'>
+        <%= link_to wine_path(wine) do%>
+          <%= attachment_image_tag wine, :image , class: 'indexImage'%>
+          <P><%= wine.age %></P>
+          <P><%= wine.kinds %></P>
+          <P><%= wine.winename %></P>
+           <div class="review-rating" data-score="<%= wine.rate %>">評価：</div>
+          </div>
+        <% end %>
+    <% end %>
+  </div>
+</div>
+<script>
+  $('.review-rating').raty({
+    readOnly: true,
+    starOn: "<%= asset_path('star-on.png') %>",
+    starOff: "<%= asset_path('star-off.png') %>",
+    starHalf: "<%= asset_path('star-half.png') %>",
+    score: function() {
+      return $(this).attr('data-score')
+    }
+  });
+</script>

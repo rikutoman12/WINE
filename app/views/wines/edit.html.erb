@@ -9,5 +9,16 @@
   <%= f.text_area :scent %>
   <%= f.text_area :taste %>
   <%= f.text_area :kinds %>
-  <%= f.submit '投稿' %>
+ <div id="rating-form">
+        <label>総合評価：</label>
+        <%= f.hidden_field :rate, :value => 'score' %>
+</div>
+ <%= f.submit '投稿' %>
 <% end %>
+<script>
+    $('#rating-form').raty({
+        starOn: "<%= asset_path('star-on.png') %>",
+        starOff: "<%= asset_path('star-off.png') %>",
+        scoreName: 'wine[rate]'
+    });
+</script>

@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2022_05_27_064703) do
   end
 
   create_table "wines", force: :cascade do |t|
+    t.text "winename"
     t.text "colour"
     t.text "comment"
     t.text "age"
@@ -28,6 +29,7 @@ ActiveRecord::Schema.define(version: 2022_05_27_064703) do
     t.text "taste"
     t.text "kinds"
     t.string "image_id"
+    t.float "rate", default: 0.0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
