@@ -1,10 +1,36 @@
-<%= attachment_image_tag @wine, :image , class: 'indexImage'%>
-  <%= @wine.colour %>
-  <%= @wine.comment %>
-  <%= @wine.age %>
-  <%= @wine.origin %>
-  <%= @wine.scent %>
-  <%= @wine.taste %>
-  <%= @wine.kinds %>
-<%= link_to 'edit',edit_wine_path(@wine) %>
-<%= link_to 'destroy',wine_path(@wine),method: :delete,data: { confirm: 'えー本当に？？？' } %>
+<div class="container">
+  <div class="row">
+    <div class="col-5">
+      <div class="m-5">
+        <%= attachment_image_tag @wine, :image , class: 'indexImage'%>
+      </div>
+    </div>
+    <div class="col-7">
+      <div class="m-5">
+        <p>色：<%= @wine.colour %></p>
+      </div>
+      <div class="m-5">
+        <p>感想：<%= @wine.comment %></p>
+      </div>
+      <div class="m-5">
+        <p>年代：<%= @wine.age %></p>
+      </div>
+      <div class="m-5">
+        <p>産地：<%= @wine.origin %></p>
+      </div>
+      <div class="m-5">
+        <p>香り：<%= @wine.scent %>
+      </div>
+      <div class="m-5">
+        <p>味：<%= @wine.taste %></p>
+      </div>
+      <div class="m-5">
+        <p>種類：<%= @wine.kinds %></p>
+      </div>
+      <div class="m-5">
+        <%= link_to 'edit',edit_wine_path(@wine) %>
+        <%= link_to 'destroy',wine_path(@wine),method: :delete,data: { confirm: 'えー本当に？？？' } %>
+      </div>
+    </div>
+  </div>
+</div>
