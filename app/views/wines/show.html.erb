@@ -28,8 +28,8 @@
         <p>種類：<%= @wine.kinds %></p>
       </div>
       <div class="m-5">
-        <%= link_to 'edit',edit_wine_path(@wine) %>
-        <%= link_to 'destroy',wine_path(@wine),method: :delete,data: { confirm: 'えー本当に？？？' } %>
+        <P><%= link_to 'edit',edit_wine_path(@wine) %></P>
+        <P><%= link_to 'destroy',wine_path(@wine),method: :delete,data: { confirm: 'えー本当に？？？' } %></P>
       </div>
     </div>
   </div>
