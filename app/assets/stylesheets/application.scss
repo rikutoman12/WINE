@@ -17,16 +17,16 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 300px) {
  .indexImage {
-   width: 400px !important;
-   height: 500px !important;
+   width: 224px !important;
+   height: 300px !important;
  }
 }
 
-@media screen and (min-width: 400px) {
+@media screen and (min-width: 1000px) {
  .indexImage {
-   width: 400px !important;
-   height: 550px !important;
+   width: 360px !important;
+   height: 450px !important;
  }
 }
