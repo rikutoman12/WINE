@@ -3,7 +3,7 @@
       <% @wines.each do |wine| %>
         <div class ="m-2">
           <%= link_to wine_path(wine) do%>
-            <%= attachment_image_tag wine, :image , class: 'indexImage'%>
+            <%= attachment_image_tag wine, :image,fallback: "no_image.jpg",class: 'indexImage'%>
             <P><%= wine.winename %></P>
             <P>年代 :<%= wine.age %></P>
             <p>産地 :<%= wine.origin %></p>

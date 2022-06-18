@@ -36,6 +36,6 @@ class WinesController < ApplicationController
   private
 
   def wine_params
-    params.require(:wine).permit(:name,:image,:colour,:comment,:age,:origin,:scent,:taste,:kinds,:rate)
+    params.require(:wine).permit(:winename,:image,:colour,:comment,:age,:origin,:scent,:taste,:kinds,:rate)
   end
 end
