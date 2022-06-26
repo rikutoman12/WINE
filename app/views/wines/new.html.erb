@@ -2,15 +2,20 @@
 
 <%= form_with model: @wine, local:true do |f| %>
   <h4>画像</h4>
-  <%= f.attachment_field :image %>
-  <%= f.text_area :winename %>
-  <%= f.text_area :colour %>
-  <%= f.text_area :comment %>
-  <%= f.text_area :age %>
-  <%= f.text_area :origin %>
-  <%= f.text_area :scent %>
-  <%= f.text_area :taste %>
-  <%= f.text_area :kinds %>
+<%= f.attachment_field :image %>
+<%= f.text_area :winename %>
+<%= f.text_area :colour %>
+<%= f.text_area :comment %>
+<%= f.text_area :age %>
+<%= f.text_area :origin %>
+<%= f.text_area :scent %>
+<%= f.text_area :taste %>
+    <%= f.label :kinds, '赤ワイン', value: 2 %>
+    <%= f.radio_button :kinds, '赤ワイン' %>
+    <%= f.label :kinds, '白ワイン', value: 1 %>
+    <%= f.radio_button :kinds, '白ワイン' %>
+    <%= f.label :kinds, 'ロゼ', value: 0 %>
+    <%= f.radio_button :kinds, 'ロゼ' %>
   <div id="rating-form">
         <label>評価：</label>
         <%= f.hidden_field :rate, :value => 'score' %>
