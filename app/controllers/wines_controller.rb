@@ -33,6 +33,11 @@ class WinesController < ApplicationController
     redirect_to wines_path
   end
 
+  def search
+    @wines = Wine.search(params[:keyword])
+    @keyword = params[:keyword]
+    render "index"
+  end
   private
 
   def wine_params
