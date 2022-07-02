@@ -10,7 +10,15 @@ class WinesController < ApplicationController
   end
 
   def index
-    @wines = Wine.all
+    if params[:latest]
+      @wines = Wine.latest
+    elsif params[:old]
+      @wines = Wine.old
+    elsif params[:rate_count]
+      @wines = Wine.rate_count
+    else
+      @wines = Wine.all
+    end
   end
 
   def show
