@@ -1,33 +1,29 @@
-<h1>画像投稿フォーム</h1>
-
 <div class=container>
     <div class="row">
-
         <%= form_with model: @wine, local:true do |f| %>
-          <h4>画像</h4>
+            <table class="table-bordered ">
+                <tr><th class="table-active p-4">写真</th><th class="p-4"><%= f.attachment_field :image %></th></tr>
+                <tr><th class="table-active p-4">名前</th><th class="p-4"><%= f.text_area :winename %></th></tr>
 
-            <table class="table-bordered">
-            <tr><th class="table-active">写真</th><th><%= f.attachment_field :image %></th></tr>
-            <tr><th class="table-active">名前：</th><th><%= f.text_area :winename %></th></tr>
-
-            <tr><th class="table-active">色：</th><th><%= f.text_area :colour %></th></tr>
-            <tr><th class="table-active">感想：</th><th><%= f.text_area :comment %></th></tr>
-            <tr><th class="table-active">年代：</th><th><%= f.text_area :age %></th></tr>
-           <tr><th class="table-active">産地：</th><th><%= f.text_area :origin %></th></tr>
-            <tr><th class="table-active">香り：</th><th><%= f.text_area :scent %></th></tr>
-            <tr><th class="table-active">味：</th><th><%= f.text_area :taste %></th></tr>
-            <tr><th class="table-active">種類</th><th><%= f.label :kinds, '赤ワイン', value: 2 %>
-            <%= f.radio_button :kinds, '赤ワイン' %>
-            <%= f.label :kinds, '白ワイン', value: 1 %>
-           <%= f.radio_button :kinds, '白ワイン' %>
-            <%= f.label :kinds, 'ロゼ', value: 0 %>
-            <%= f.radio_button :kinds, 'ロゼ' %></th></tr>
-
-                <div id="rating-form">
-                    <tr><th class="table-active">評価：</th><th><%= f.hidden_field :rate, :value => 'score' %></th></tr>
-                </div>
-
-             <%= f.submit '投稿' %>
+                <tr><th class="table-active p-4">色</th><th class="p-4"><%= f.text_area :colour %></th></tr>
+                <tr><th class="table-active p-4">感想</th><th class="p-5"><%= f.text_area :comment %></th></tr>
+                <tr><th class="table-active p-4">年代</th><th class="p-4"><%= f.text_area :age %></th></tr>
+               <tr><th class="table-active p-4">産地</th><th class="p-4"><%= f.text_area :origin %></th></tr>
+                <tr><th class="table-active p-4">香り</th><th class="p-4"><%= f.text_area :scent %></th></tr>
+                <tr><th class="table-active p-4">味</th><th class="p-4"><%= f.text_area :taste %></th></tr>
+                <tr><th class="table-active p-4">種類</th><th class="p-4"><%= f.label :kinds, '赤ワイン', value: 2 %>
+                    <%= f.radio_button :kinds, '赤ワイン' %>
+                    <%= f.label :kinds, '白ワイン', value: 1 %>
+                    <%= f.radio_button :kinds, '白ワイン' %>
+                    <%= f.label :kinds, 'ロゼ', value: 0 %>
+                    <%= f.radio_button :kinds, 'ロゼ' %></th></tr>
+                <tr><th class="table-active p-4">評価：</th><th>
+                    <div id="rating-form">
+                        <%= f.hidden_field :rate, :value => 'score' %>
+                    </div>
+                </th></tr>
+            </table>
+            <%= f.submit '投稿' %>
         <% end %>
         <script>
             $('#rating-form').raty({
@@ -36,7 +32,6 @@
                 scoreName: 'wine[rate]'
             });
         </script>
-        </table>
     </div>
 </div>
 
