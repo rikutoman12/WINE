@@ -1,11 +1,12 @@
-<div class=container>
-    <div class="row">
+<div class="container mt-5">
+    <div class="row justify-content-center">
         <%= form_with model: @wine, local:true do |f| %>
             <table class="table-bordered ">
-                <tr><th class="table-active p-4">写真</th><th class="p-4"><%= f.attachment_field :image %></th></tr>
+
+                <tr><th class="table-active"><div class="new1">写真</div></th><th><div class="new1"><%= f.attachment_field :image %></div></th></tr>
                 <tr><th class="table-active p-4">名前</th><th class="p-4"><%= f.text_area :winename %></th></tr>
 
-                <tr><th class="table-active p-4">色</th><th class="p-4"><%= f.text_area :colour %></th></tr>
+                <tr><th class="table-active p-4"><div class="new1">色</div></th><th class="p-4"><div class="new1"><%= f.text_area :colour %></div></th></tr>
                 <tr><th class="table-active p-4">感想</th><th class="p-5"><%= f.text_area :comment %></th></tr>
                 <tr><th class="table-active p-4">年代</th><th class="p-4"><%= f.text_area :age %></th></tr>
                <tr><th class="table-active p-4">産地</th><th class="p-4"><%= f.text_area :origin %></th></tr>
