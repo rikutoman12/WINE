@@ -3,22 +3,25 @@
         <%= form_with model: @wine, local:true do |f| %>
             <table class="table-bordered ">
                 <tr><th class="table-active"><div class="new1">写真</div></th><th><div class="new2"><%= f.attachment_field :image %></div></th></tr>
-                <tr><th class="table-active"><div class="new1">名前</div></th><th><div class="new2"><%= f.text_area :winename %></div></th></tr>
+                <tr><th class="table-active"><div class="new1">名前</div></th><th><div class="new2"><%= f.text_area :winename, size: "42x1"%></div></th></tr>
 
-                <tr><th class="table-active"><div class="new1">色</div></th><th><div class="new2"><%= f.text_area :colour %></div></th></tr>
-                <tr><th class="table-active"><div class="new1">感想</div></th><th><div class="new2"><%= f.text_area :comment %></div></th></tr>
-                <tr><th class="table-active"><div class="new1">年代</div></th><th><div class="new2"><%= f.text_area :age %></div></th></tr>
-                <tr><th class="table-active"><div class="new1">産地</div></th><th><div class="new2"><%= f.text_area :origin %></div></th></tr>
-                <tr><th class="table-active"><div class="new1">香り</div></th><th><div class="new2"><%= f.text_area :scent %></div></th></tr>
-                <tr><th class="table-active"><div class="new1">味</div></th><th><div class="new2"><%= f.text_area :taste %></div></th></tr>
-                <tr><th class="table-active"><div class="new1">種類</div></th><th><div class="new2">
-                    <%= f.label :kinds, '赤ワイン', value: 2 %>
-                    <%= f.radio_button :kinds, '赤ワイン' %>
-                    <%= f.label :kinds, '白ワイン', value: 1 %>
-                    <%= f.radio_button :kinds, '白ワイン' %>
-                    <%= f.label :kinds, 'ロゼ', value: 0 %>
-                    <%= f.radio_button :kinds, 'ロゼ' %></th></tr>
-               </div> <tr><th class="table-active"><div class="new1">評価</div></th><th>
+                <tr><th class="table-active"><div class="new1">色</div></th><th><div class="new2"><%= f.text_area :colour, size: "42x1"%></div></th></tr>
+                <tr><th class="table-active"><div class="new1">感想</div></th><th><div class="new2"><%= f.text_area :comment, size: "42x3"%></div></th></tr>
+                <tr><th class="table-active"><div class="new1">年代</div></th><th><div class="new2"><%= f.text_area :age, size: "42x1"%></div></th></tr>
+                <tr><th class="table-active"><div class="new1">産地</div></th><th><div class="new2"><%= f.text_area :origin, size: "42x1"%></div></th></tr>
+                <tr><th class="table-active"><div class="new1">香り</div></th><th><div class="new2"><%= f.text_area :scent, size: "42x1"%></div></th></tr>
+                <tr><th class="table-active"><div class="new1">味</div></th><th><div class="new2"><%= f.text_area :taste, size: "42x1"%></div></th></tr>
+                <tr><th class="table-active"><div class="new1">種類</div></th><th>
+                    <div class="new1">
+                        <%= f.label :kinds, '赤ワイン', value: 2 %>
+                        <%= f.radio_button :kinds, '赤ワイン' %>
+                        <%= f.label :kinds, '白ワイン', value: 1 %>
+                        <%= f.radio_button :kinds, '白ワイン' %>
+                        <%= f.label :kinds, 'ロゼ', value: 0 %>
+                        <%= f.radio_button :kinds, 'ロゼ' %>
+                    </div>
+                </th></tr>
+                <tr><th class="table-active"><div class="new1">評価</div></th><th>
                    <div class="new1">
                         <div id="rating-form">
                             <%= f.hidden_field :rate, :value => 'score' %>
