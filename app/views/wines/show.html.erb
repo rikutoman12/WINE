@@ -1,13 +1,16 @@
 <div class="container">
   <div class="row">
-    <div class="col-5">
+    <div class="col-6">
       <div class="mt-5">
         <%= attachment_image_tag @wine, :image,fallback: "no_image.jpg", class: 'showImage'%>
       </div>
     </div>
-    <div class="col-7">
+    <div class="col-6">
       <div class="m-5">
-        <p>名前：<%= @wine.winename %></p>
+        <h3><%= @wine.winename %></h3>
+      </div>
+      <div class="m-5">
+        <p><div class="review-rating" data-score="<%= @wine.rate %>">評価：</div></p>
       </div>
       <div class="m-5">
         <p>年代：<%= @wine.age %></p>
@@ -27,13 +30,25 @@
       <div class="m-5">
         <p>味：<%= @wine.taste %></p>
       </div>
-      <div class="m-5">
-        <p>感想：<%= @wine.comment %></p>
-      </div>
-      <div class="m-5">
-        <P><%= link_to 'edit',edit_wine_path(@wine) %></P>
-        <P><%= link_to 'destroy',wine_path(@wine),method: :delete,data: { confirm: 'えー本当に？？？' } %></P>
-      </div>
+    </div>
+    <div class="m-5">
+      <p>感想：<%= @wine.comment %></p>
+      <P>
+        <%= link_to 'edit',edit_wine_path(@wine) %>
+        <%= link_to 'destroy',wine_path(@wine),method: :delete,data: { confirm: 'えー本当に？？？' } %>
+      </P>
     </div>
   </div>
 </div>
+
+<script>
+  $('.review-rating').raty({
+    readOnly: true,
+    starOn: "<%= asset_path('star-on.png') %>",
+    starOff: "<%= asset_path('star-off.png') %>",
+    starHalf: "<%= asset_path('star-half.png') %>",
+    score: function() {
+      return $(this).attr('data-score')
+    }
+  });
+</script>
