@@ -4,9 +4,14 @@
             <table class="table-bordered ">
                 <tr><th class="table-active"><div class="new1">写真</div></th><th><div class="new2"><%= f.attachment_field :image %></div></th></tr>
                 <tr><th class="table-active"><div class="new1">名前</div></th><th><div class="new2"><%= f.text_area :winename, size: "42x1"%></div></th></tr>
-
+                <tr><th class="table-active"><div class="new1">評価</div></th><th>
+                   <div class="new1">
+                        <div id="rating-form">
+                            <%= f.hidden_field :rate, :value => 'score' %>
+                        </div>
+                    </div>
+                </th></tr>
                 <tr><th class="table-active"><div class="new1">色</div></th><th><div class="new2"><%= f.text_area :colour, size: "42x1"%></div></th></tr>
-                <tr><th class="table-active"><div class="new1">感想</div></th><th><div class="new2"><%= f.text_area :comment, size: "42x3"%></div></th></tr>
                 <tr><th class="table-active"><div class="new1">年代</div></th><th><div class="new2"><%= f.text_area :age, size: "42x1"%></div></th></tr>
                 <tr><th class="table-active"><div class="new1">産地</div></th><th><div class="new2"><%= f.text_area :origin, size: "42x1"%></div></th></tr>
                 <tr><th class="table-active"><div class="new1">香り</div></th><th><div class="new2"><%= f.text_area :scent, size: "42x1"%></div></th></tr>
@@ -21,13 +26,7 @@
                         <%= f.radio_button :kinds, 'ロゼ' %>
                     </div>
                 </th></tr>
-                <tr><th class="table-active"><div class="new1">評価</div></th><th>
-                   <div class="new1">
-                        <div id="rating-form">
-                            <%= f.hidden_field :rate, :value => 'score' %>
-                        </div>
-                    </div>
-                </th></tr>
+                <tr><th class="table-active"><div class="new1">感想</div></th><th><div class="new2"><%= f.text_area :comment, size: "42x3"%></div></th></tr>
             </table>
             <%= f.submit '投稿' %>
         <% end %>
