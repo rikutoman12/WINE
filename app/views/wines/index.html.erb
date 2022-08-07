@@ -1,7 +1,9 @@
 <div class=container>
-  <%= link_to '新しい順', wines_path(latest: "true") %>
-  <%= link_to '古い順', wines_path(old: "true") %>
-  <%= link_to '評価の高い順', wines_path(rate_count: "true") %>
+  <div class="search">
+    <%= link_to '新しい順', wines_path(latest: "true") %>
+    <%= link_to '古い順', wines_path(old: "true") %>
+    <%= link_to '評価の高い順', wines_path(rate_count: "true") %>
+  </div>
   <div class="row">
       <% @wines.each do |wine| %>
         <div class ="m-2">
