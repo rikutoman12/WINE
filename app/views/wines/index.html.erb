@@ -1,26 +1,75 @@
 <div class=container>
+
   <div class="search">
+
     <%= link_to '新しい順', wines_path(latest: "true") %>
     <%= link_to '古い順', wines_path(old: "true") %>
     <%= link_to '評価の高い順', wines_path(rate_count: "true") %>
+
   </div>
+
   <div class="row">
-      <% @wines.each do |wine| %>
+
+    <% @wines.each do |wine| %>
+
+      <div class="table-bordered" >
+
         <div class ="m-2">
+
           <%= link_to wine_path(wine) do%>
-            <%= attachment_image_tag wine, :image,fallback: "no_image.jpg",class: 'indexImage'%>
-            <P><%= wine.winename %></P>
-            <P>年代 :<%= wine.age %></P>
-            <p>産地 :<%= wine.origin %></p>
-            <P>種類 :<%= wine.kinds %></P>
-             <div class="review-rating" data-score="<%= wine.rate %>">評価：</div>
-             <td><%= l wine.created_at, format: :short  %></td>
+
+            <div class ="text-dark">
+
+              <%= attachment_image_tag wine, :image,fallback: "no_image.jpg",class: 'indexImage'%>
+
+              <div class="text-center m-2" >
+
+                <P><%= wine.winename %></P>
+
+              </div>
+
+              <div class="ml-5" >
+
+                <P>年代&nbsp;&nbsp;:&nbsp;&nbsp;<%= wine.age %></P>
+
+              </div>
+
+              <div class="ml-5" >
+
+                <p>産地&nbsp;&nbsp;:&nbsp;&nbsp;<%= wine.origin %></p>
+
+              </div>
+
+              <div class="ml-5" >
+
+                <P>種類&nbsp;&nbsp;:&nbsp;&nbsp;<%= wine.kinds %></P>
+
+              </div>
+
+              <div class="text-center m-2" >
+
+                <div class="review-rating" data-score="<%= wine.rate %>"></div>
+
+                <td><%= l wine.created_at, format: :short  %></td>
+
+              </div>
+
+            </div>
+
           <% end %>
+
         </div>
-      <% end %>
+
+      </div>
+
+    <% end %>
+
   </div>
+
 </div>
+
 <script>
+
   $('.review-rating').raty({
     readOnly: true,
     starOn: "<%= asset_path('star-on.png') %>",
@@ -30,4 +79,5 @@
       return $(this).attr('data-score')
     }
   });
+
 </script>

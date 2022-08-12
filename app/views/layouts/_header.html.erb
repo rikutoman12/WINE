@@ -1,23 +1,23 @@
 <header>
-  <div class="text-center">
-    <h1><%= link_to 'ワインログ',root_path, class: "text-decoration-none text-dark" %></h1>
-  </div>
-    <div class="container">
-      <ul>
-        <li>
-          <div class="search-form">
-            <%= form_with url: search_path, method: :get, local: true do |f| %>
+
+  <div class="container">
+    <div class= "row">
+      <div class="col-6 ">
+        <ul>
+          <li class= "list">
+            <%= link_to '一覧画面',wines_path, class: 'btn btn-outline-dark fas fa-list py-2' %>
+          </li>
+          <li class="list">
+            <%= link_to  '投稿画面',new_wine_path, class: 'btn btn-outline-dark fas fa-pen-nib py-2' %>
+          </li>
+        </ul>
+        </div>
+        <div class="col-6 text-right">
+           <%= form_with url: search_path, method: :get, local: true do |f| %>
               <%= f.text_field :keyword, value: @keyword %>
               <%= f.submit "検索" %>
             <% end %>
           </div>
-        </li>
-        <li>
-          <%= link_to '一覧画面',wines_path, class: 'btn btn-outline-dark fas fa-list py-2' %>
-        </li>
-        <li>
-          <%= link_to  '投稿画面',new_wine_path, class: 'btn btn-outline-dark fas fa-pen-nib py-2' %>
-        </li>
-      </ul>
-    </div>
+        </div>
+      </div>
 </header>
