@@ -1,18 +1,27 @@
-<div class="container mt-5">
-    <div class="row justify-content-center">
-        <%= form_with model: @wine, local:true do |f| %>
-            <table class="table-bordered ">
-                <tr><th class="table-active"><div class="new1">写真</div></th><th><div class="new2"><%= f.attachment_field :image %></div></th></tr>
-                <tr><th class="table-active"><div class="new1">名前</div></th><th><div class="new2"><%= f.text_area :winename, size: "42x1"%></div></th></tr>
-                <tr><th class="table-active"><div class="new1">色</div></th><th><div class="new2"><%= f.text_area :colour, size: "42x1"%></div></th></tr>
-                <tr><th class="table-active"><div class="new1">年代</div></th><th><div class="new2"><%= f.text_area :age, size: "42x1"%></div></th></tr>
-                <tr><th class="table-active"><div class="new1">産地</div></th><th><div class="new2"><%= f.text_area :origin, size: "42x1"%></div></th></tr>
-                <tr><th class="table-active"><div class="new1">香り</div></th><th><div class="new2"><%= f.text_area :scent, size: "42x1"%></div></th></tr>
-                <tr><th class="table-active"><div class="new1">味</div></th><th><div class="new2"><%= f.text_area :taste, size: "42x1"%></div></th></tr>
-                <tr><th class="table-active"><div class="new1">感想</div></th><th><div class="new2"><%= f.text_area :comment, size: "42x3"%></div></th></tr>
-            </table>
-            <%= f.submit '投稿' %>
-        <% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-xl-6 col-sm-4">
+      <div class="mt-5">
+        <%= attachment_image_tag @wine, :image,fallback: "no_image.jpg", class: 'edit_Image'%>
+      </div>
+    </div>
+    <div class="col-xl-6 col-sm-8">
+        <div class="mt-5">
+            <%= form_with model: @wine, local:true do |f| %>
+                <table class="table-bordered ">
+                    <tr><th class="table-active"><div class="new3">写真</div></th><th><div class="new2"><%= f.attachment_field :image %></div></th></tr>
+                    <tr><th class="table-active"><div class="new3">名前</div></th><th><div class="new2"><%= f.text_area :winename, size: "40x1"%></div></th></tr>
+                    <tr><th class="table-active"><div class="new3">色</div></th><th><div class="new2"><%= f.text_area :colour, size: "40x1"%></div></th></tr>
+                    <tr><th class="table-active"><div class="new3">年代</div></th><th><div class="new2"><%= f.text_area :age, size: "40x1"%></div></th></tr>
+                    <tr><th class="table-active"><div class="new3">産地</div></th><th><div class="new2"><%= f.text_area :origin, size: "40x1"%></div></th></tr>
+                    <tr><th class="table-active"><div class="new3">香り</div></th><th><div class="new2"><%= f.text_area :scent, size: "40x1"%></div></th></tr>
+                    <tr><th class="table-active"><div class="new3">味</div></th><th><div class="new2"><%= f.text_area :taste, size: "40x1"%></div></th></tr>
+                    <tr><th class="table-active"><div class="new3">感想</div></th><th><div class="new2"><%= f.text_area :comment, size: "40x3"%></div></th></tr>
+                </table>
+                <%= f.submit '投稿' %>
+            <% end %>
+        </div>
+    </div>
     </div>
 </div>
 
